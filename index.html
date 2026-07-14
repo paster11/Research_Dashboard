@@ -9,7 +9,7 @@
     --bg:#0e1420; --panel:#161e2e; --panel2:#1c2638; --border:#2a3752;
     --text:#e8edf6; --muted:#93a1b8; --accent:#4da3ff;
     --ow:#2ecc8f; --uw:#ff6b6b; --neu:#f0b94b;
-    --br:#ffb547; --iv:#4da3ff; --ms:#b48cff;
+    --br:#ffb547; --iv:#4da3ff; --ms:#b48cff; --fd:#3dbd85;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.5}
@@ -34,7 +34,7 @@
   .sec ul{list-style:none}
   .sec li{font-size:.84rem;padding:4px 0 4px 14px;position:relative;color:#cdd6e6}
   .sec li::before{content:"";position:absolute;left:0;top:11px;width:6px;height:6px;border-radius:50%;background:var(--accent)}
-  .card.br .sec li::before{background:var(--br)} .card.iv .sec li::before{background:var(--iv)} .card.ms .sec li::before{background:var(--ms)}
+  .card.br .sec li::before{background:var(--br)} .card.iv .sec li::before{background:var(--iv)} .card.ms .sec li::before{background:var(--ms)} .card.fd .sec li::before{background:var(--fd)}
   .badge{font-size:.68rem;font-weight:700;padding:2px 9px;border-radius:20px;white-space:nowrap}
   .b-ow{background:rgba(46,204,143,.15);color:var(--ow);border:1px solid rgba(46,204,143,.4)}
   .b-uw{background:rgba(255,107,107,.12);color:var(--uw);border:1px solid rgba(255,107,107,.4)}
@@ -67,7 +67,7 @@
   <header>
     <div>
       <h1>Research Intelligence <span>Dashboard</span></h1>
-      <div class="sub">BlackRock Investment Institute (weekly) · Invesco Solutions TAA (monthly) · Morgan Stanley "The BEAT" (quarterly) — compiled July 14, 2026</div>
+      <div class="sub">BlackRock Investment Institute (weekly) · Invesco Solutions TAA (monthly) · Morgan Stanley "The BEAT" (quarterly) · Fidelity International GAA Insights (monthly) — compiled July 14, 2026</div>
     </div>
   </header>
 
@@ -164,6 +164,33 @@
           <li>Credit spreads / defaults as systemic-stress early warning.</li>
         </ul></div>
       </div>
+
+      <div class="card fd">
+        <h2><span class="dot" style="background:var(--fd)"></span>Fidelity International — GAA Insights</h2>
+        <div class="meta">Monthly, Multi Asset team · Latest: July 2026 (views June 2026) · Horizon 12–18 months</div>
+        <div class="sec"><h3>Key Insights</h3><ul>
+          <li>Growth resilient across major regions on strong earnings, fiscal expansion and AI-led investment; energy shock fading as the Mideast conflict moves toward a "messy resolution".</li>
+          <li>Markets shifting attention away from Iran and back to robust medium-term fundamentals.</li>
+          <li>Distinctive stance: favour EM over DM equities — attractive valuations, structural growth drivers, improving earnings momentum.</li>
+          <li>Greater cross-market dispersion strengthens the case for active regional and sector positioning.</li>
+        </ul></div>
+        <div class="sec"><h3>Key Takeaways (positioning)</h3><ul>
+          <li>Overweight equities: Japan a conviction OW (corporate reform, reflation); UW Europe; EM favoured — especially Korea, Taiwan and China tech; U.S. via targeted thematic rather than broad exposure.</li>
+          <li>Credit: less cautious overall but valuations unappealing — high yield downgraded to Neutral; IG expected return poor; EMD hard currency neutral.</li>
+          <li>Government bonds balanced: favour UK Gilts (BoE less hawkish than priced); JGBs neutral after the yield rise; prefer selected EM local markets.</li>
+          <li>Moved OW U.S. dollar; UW sterling; gold retained as strategic diversifier.</li>
+        </ul></div>
+        <div class="sec"><h3>Key Outlook</h3><ul>
+          <li>Inflation begins to moderate as the energy shock eases, but firm growth and fiscal expansion limit how far yields can fall.</li>
+          <li>AI investment cycle remains a powerful tailwind; elevated U.S. valuations and concentrated leadership warrant discipline.</li>
+          <li>Thematic support: AI infrastructure, grid upgrades, electrification, transition materials (copper), European defence.</li>
+        </ul></div>
+        <div class="sec"><h3>Key Monitoring</h3><ul>
+          <li>Energy market — whether easing supply disruption lets inflation keep moderating.</li>
+          <li>Central bank policy — room to turn dovish again if the Iran conflict resolves.</li>
+          <li>AI earnings breadth beyond the largest tech companies.</li>
+        </ul></div>
+      </div>
     </div>
   </div>
 
@@ -178,60 +205,73 @@
     <div class="card">
       <table>
         <thead><tr>
-          <th style="width:16%">Asset Class</th>
-          <th style="width:28%"><span class="dot" style="background:var(--br)"></span> BlackRock <span class="pill">Jul 13 weekly</span></th>
-          <th style="width:28%"><span class="dot" style="background:var(--iv)"></span> Invesco <span class="pill">Jul TAA</span></th>
-          <th style="width:28%"><span class="dot" style="background:var(--ms)"></span> Morgan Stanley <span class="pill">Q3 BEAT</span></th>
+          <th style="width:12%">Asset Class</th>
+          <th style="width:22%"><span class="dot" style="background:var(--br)"></span> BlackRock <span class="pill">Jul 13 weekly</span></th>
+          <th style="width:22%"><span class="dot" style="background:var(--iv)"></span> Invesco <span class="pill">Jul TAA</span></th>
+          <th style="width:22%"><span class="dot" style="background:var(--ms)"></span> Morgan Stanley <span class="pill">Q3 BEAT</span></th>
+          <th style="width:22%"><span class="dot" style="background:var(--fd)"></span> Fidelity <span class="pill">Jul GAA</span></th>
         </tr></thead>
         <tbody>
           <tr><td class="asset">Equities overall</td>
             <td><span class="badge b-ow">Pro-risk</span><span class="chg same">—</span><span class="note">Equities over govt bonds; earnings outpacing rates</span></td>
             <td><span class="badge b-ow">OW vs FI</span><span class="chg same">—</span><span class="note">Moderate OW, defensively tilted (quality, low vol)</span></td>
-            <td><span class="badge b-neu">Neutral</span><span class="chg same">—</span><span class="note">Neutral risk level; MOU uncertainty; active OWs underneath</span></td></tr>
+            <td><span class="badge b-neu">Neutral</span><span class="chg same">—</span><span class="note">Neutral risk level; MOU uncertainty; active OWs underneath</span></td>
+            <td><span class="badge b-ow">OW</span><span class="chg same">—</span><span class="note">Markets refocusing on resilient fundamentals; equities over credit</span></td></tr>
           <tr><td class="asset">U.S. equities</td>
             <td><span class="badge b-ow">OW</span><span class="chg same">—</span><span class="note">AI-led earnings strength; bottlenecks: power, chips, data centers</span></td>
             <td><span class="badge b-neu">Trimming</span><span class="chg dn">▼</span><span class="note">Incrementally reducing U.S. vs DM ex-US</span></td>
-            <td><span class="badge b-ow">OW</span><span class="chg same">—</span><span class="note">#1 active view; AI tailwinds + OBBBA fiscal; also OW U.S. SMID</span></td></tr>
+            <td><span class="badge b-ow">OW</span><span class="chg same">—</span><span class="note">#1 active view; AI tailwinds + OBBBA fiscal; also OW U.S. SMID</span></td>
+            <td><span class="badge b-neu">Selective</span><span class="chg same">—</span><span class="note">AI earnings support, but valuations/concentration — prefer targeted thematic</span></td></tr>
           <tr><td class="asset">Europe equities</td>
             <td><span class="badge b-neu">N</span><span class="chg same">—</span><span class="note">Need business-friendly policy; like financials, infra, industrials</span></td>
             <td><span class="badge b-neu">N (improving)</span><span class="chg up">▲</span><span class="note">DM ex-US gains as U.S. preference is trimmed</span></td>
-            <td><span class="badge b-uw">UW</span><span class="chg dn">▼</span><span class="note">Downgraded from Neutral; keep Banks, Utilities/grid</span></td></tr>
+            <td><span class="badge b-uw">UW</span><span class="chg dn">▼</span><span class="note">Downgraded from Neutral; keep Banks, Utilities/grid</span></td>
+            <td><span class="badge b-uw">UW</span><span class="chg same">—</span><span class="note">Weak external demand, soft earnings, energy costs</span></td></tr>
           <tr><td class="asset">Japan equities</td>
             <td><span class="badge b-neu">N</span><span class="chg dn">▼</span><span class="note">Was OW earlier in 2026; prefer physical-AI exposures; equities over JGBs</span></td>
             <td><span class="badge b-neu">Within DM ex-US tilt</span><span class="chg up">▲</span><span class="note">Beneficiary of reduced U.S. preference; OW JPY</span></td>
-            <td><span class="badge b-neu">N</span><span class="chg same">—</span><span class="note">AI capex + reforms + reflation; OW Japanese banks</span></td></tr>
+            <td><span class="badge b-neu">N</span><span class="chg same">—</span><span class="note">AI capex + reforms + reflation; OW Japanese banks</span></td>
+            <td><span class="badge b-ow">OW</span><span class="chg same">—</span><span class="note">Conviction OW: corporate reform, shareholder returns, reflation</span></td></tr>
           <tr><td class="asset">EM equities</td>
             <td><span class="badge b-neu">N</span><span class="chg dn">▼</span><span class="note">Cut from OW as dollar strengthened; like AI-infra plays, LatAm</span></td>
             <td><span class="badge b-neu">N (improving)</span><span class="chg up">▲</span><span class="note">Reduced DM-over-EM preference</span></td>
-            <td><span class="badge b-neu">N</span><span class="chg same">—</span><span class="note">Divergence: Taiwan/Korea AI strength vs China/India softness</span></td></tr>
+            <td><span class="badge b-neu">N</span><span class="chg same">—</span><span class="note">Divergence: Taiwan/Korea AI strength vs China/India softness</span></td>
+            <td><span class="badge b-ow">OW</span><span class="chg same">—</span><span class="note">Favour EM over DM: Korea, Taiwan, China tech</span></td></tr>
           <tr><td class="asset">Govt bonds / duration</td>
             <td><span class="badge b-uw">UW long end</span><span class="chg same">—</span><span class="note">UW long UST & JGBs; prefer front-end/belly U.S. & euro curves</span></td>
             <td><span class="badge b-ow">OW duration</span><span class="chg same">—</span><span class="note">Duration as growth hedge; now via nominals, not linkers</span></td>
-            <td><span class="badge b-uw">Slightly UW</span><span class="chg same">—</span><span class="note">Close to neutral post-rally; curve-steepening bias; OW TIPS</span></td></tr>
+            <td><span class="badge b-uw">Slightly UW</span><span class="chg same">—</span><span class="note">Close to neutral post-rally; curve-steepening bias; OW TIPS</span></td>
+            <td><span class="badge b-neu">Balanced</span><span class="chg same">—</span><span class="note">Favour UK Gilts; JGBs neutral; selected EM local preferred</span></td></tr>
           <tr><td class="asset">IG credit</td>
             <td><span class="badge b-neu">N short-term</span><span class="chg same">—</span><span class="note">UW long-term IG; spreads tight on corporate strength</span></td>
             <td><span class="badge b-uw">UW credit</span><span class="chg same">—</span><span class="note">Spread compensation unattractive vs alternatives</span></td>
-            <td><span class="badge b-uw">UW</span><span class="chg same">—</span><span class="note">Poor risk asymmetry at near-record tight spreads</span></td></tr>
+            <td><span class="badge b-uw">UW</span><span class="chg same">—</span><span class="note">Poor risk asymmetry at near-record tight spreads</span></td>
+            <td><span class="badge b-uw">Cautious</span><span class="chg up">▲</span><span class="note">Less negative overall on credit, but IG expected return still poor</span></td></tr>
           <tr><td class="asset">High yield / loans</td>
             <td><span class="badge b-neu">N</span><span class="chg same">—</span><span class="note">Prefer higher-rated U.S./European HY; dispersion rising</span></td>
             <td><span class="badge b-uw">Quality tilt</span><span class="chg same">—</span><span class="note">Prefer quality credit over risky credit</span></td>
-            <td><span class="badge b-neu">HY over IG</span><span class="chg same">—</span><span class="note">OW bank loans (carry); MBS/ABS = highest-conviction bond OW</span></td></tr>
+            <td><span class="badge b-neu">HY over IG</span><span class="chg same">—</span><span class="note">OW bank loans (carry); MBS/ABS = highest-conviction bond OW</span></td>
+            <td><span class="badge b-neu">N</span><span class="chg dn">▼</span><span class="note">HY downgraded to Neutral — carry attractive but income-only at tight spreads</span></td></tr>
           <tr><td class="asset">Securitized / MBS</td>
             <td><span class="badge b-ow">OW agency MBS</span><span class="chg same">—</span><span class="note">Higher income than USTs, similar risk, diversification</span></td>
             <td><span class="badge b-neu">n/a</span><span class="chg same">—</span><span class="note">Not separately expressed in TAA framework</span></td>
-            <td><span class="badge b-ow">OW MBS/ABS</span><span class="chg same">—</span><span class="note">Highest-conviction fixed income overweight</span></td></tr>
+            <td><span class="badge b-ow">OW MBS/ABS</span><span class="chg same">—</span><span class="note">Highest-conviction fixed income overweight</span></td>
+            <td><span class="badge b-neu">n/a</span><span class="chg same">—</span><span class="note">Not separately expressed in GAA framework</span></td></tr>
           <tr><td class="asset">EM debt</td>
             <td><span class="badge b-ow">OW local ccy</span><span class="chg up">▲</span><span class="note">Shifted from hard-ccy preference; yield vs vol + improving fundamentals</span></td>
             <td><span class="badge b-neu">Via FX</span><span class="chg same">—</span><span class="note">OW high-yielding EM FX (INR, IDR, TWD, THB)</span></td>
-            <td><span class="badge b-ow">OW hard ccy</span><span class="chg same">—</span><span class="note">Preferred over expensive corporate credit</span></td></tr>
+            <td><span class="badge b-ow">OW hard ccy</span><span class="chg same">—</span><span class="note">Preferred over expensive corporate credit</span></td>
+            <td><span class="badge b-neu">N hard / prefer local</span><span class="chg same">—</span><span class="note">Selected EM local markets: high real yields, credible central banks</span></td></tr>
           <tr><td class="asset">U.S. dollar</td>
             <td><span class="badge b-neu">Constructive</span><span class="chg same">—</span><span class="note">Safe-haven intact; strength no longer auto-negative for EM</span></td>
             <td><span class="badge b-uw">UW</span><span class="chg dn">▼</span><span class="note">Flipped from OW: rate convergence kills carry; intl data improving</span></td>
-            <td><span class="badge b-neu">Softening</span><span class="chg same">—</span><span class="note">Safe-haven bid expected to fade as volatility falls</span></td></tr>
+            <td><span class="badge b-neu">Softening</span><span class="chg same">—</span><span class="note">Safe-haven bid expected to fade as volatility falls</span></td>
+            <td><span class="badge b-ow">OW</span><span class="chg up">▲</span><span class="note">Moved OW: resilient growth, hawkish Warsh Fed; UW sterling</span></td></tr>
           <tr><td class="asset">Commodities / real assets</td>
             <td><span class="badge b-ow">Infra OW theme</span><span class="chg same">—</span><span class="note">Energy security & bottlenecks; infrastructure at a discount</span></td>
             <td><span class="badge b-neu">Defensive tilt</span><span class="chg same">—</span><span class="note">Risk positioned below average overall</span></td>
-            <td><span class="badge b-neu">N</span><span class="chg same">—</span><span class="note">Energy falls on MOU; industrial metals upside if growth accelerates</span></td></tr>
+            <td><span class="badge b-neu">N</span><span class="chg same">—</span><span class="note">Energy falls on MOU; industrial metals upside if growth accelerates</span></td>
+            <td><span class="badge b-ow">Gold + copper</span><span class="chg same">—</span><span class="note">Gold as strategic diversifier; constructive on transition materials</span></td></tr>
         </tbody>
       </table>
     </div>
@@ -240,11 +280,12 @@
       <h2 style="font-size:.95rem;margin-bottom:10px">Consensus vs. Divergence</h2>
       <div style="display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));font-size:.84rem">
         <div>
-          <h3 style="font-size:.72rem;text-transform:uppercase;color:var(--ow);margin-bottom:6px">Where all three agree</h3>
+          <h3 style="font-size:.72rem;text-transform:uppercase;color:var(--ow);margin-bottom:6px">Where all four agree</h3>
           <ul style="list-style:none;color:#cdd6e6">
-            <li style="padding:3px 0">• Structurally higher rates/nominal regime — underweight or cautious on long duration & IG credit at tight spreads.</li>
-            <li style="padding:3px 0">• U.S. equity earnings (AI-driven) remain the core engine; income via securitized/selective credit over broad IG.</li>
+            <li style="padding:3px 0">• Higher-rates regime — cautious on IG credit at tight spreads; income via selective credit rather than broad indices.</li>
+            <li style="padding:3px 0">• AI-driven earnings remain the core return engine; AI infrastructure/bottleneck themes (power, grid, chips) favoured across the board.</li>
             <li style="padding:3px 0">• Mideast shock = manageable; markets right to look through it, but Hormuz durability is the shared watch-item.</li>
+            <li style="padding:3px 0">• Europe equities: nobody is overweight — MS and Fidelity UW, BlackRock and Invesco neutral.</li>
           </ul>
         </div>
         <div>
@@ -254,6 +295,8 @@
             <li style="padding:3px 0">• <b>Duration:</b> Invesco OW duration as a slowdown hedge — directly opposite BlackRock's UW long bonds and MS's slight UW.</li>
             <li style="padding:3px 0">• <b>Europe:</b> MS downgraded to UW just as Invesco tilts toward DM ex-US; BlackRock sits neutral.</li>
             <li style="padding:3px 0">• <b>Inflation-linked:</b> MS OW TIPS (expects inflation expectations to rise) vs Invesco rotating out of linkers into nominals.</li>
+            <li style="padding:3px 0">• <b>EM vs U.S.:</b> Fidelity favours EM over DM (Korea/Taiwan/China tech) and is only selective on the U.S. — the mirror image of BlackRock's and MS's U.S. overweights.</li>
+            <li style="padding:3px 0">• <b>USD:</b> Fidelity moved OW just as Invesco flipped to UW — a direct head-to-head call.</li>
           </ul>
         </div>
       </div>
@@ -296,11 +339,22 @@
         <div class="drow"><span class="arr chg same">— Unchanged</span><div>OW U.S. equities & U.S. SMID; UW credit/IG at record-tight spreads; MBS/ABS highest-conviction bond OW; HY over IG; bank loans; equities neutral overall.</div></div>
         <div class="drow"><span class="arr chg up">▲ Geopolitics</span><div>Q2: conflict = key risk, watch demand destruction → Q3: <b>cautiously optimistic MOU holds</b>; tail risks easing supports breadth.</div></div>
       </div>
+
+      <div class="card fd">
+        <h2><span class="dot" style="background:var(--fd)"></span>Fidelity — July vs June GAA</h2>
+        <div class="meta">Changes as stated in the July 2026 edition</div>
+        <div class="drow"><span class="arr chg up">▲ USD</span><div>Moved to <b>Overweight</b> (tactical): resilient U.S. growth, higher relative yields, hawkish Warsh Fed pricing out near-term easing.</div></div>
+        <div class="drow"><span class="arr chg dn">▼ High yield</span><div>Downgraded to <b>Neutral</b>: carry still attractive but tighter spreads make it an income-only opportunity.</div></div>
+        <div class="drow"><span class="arr chg dn">▼ Sterling</span><div>Moved to <b>Underweight</b>: weak labour market, political uncertainty; BoE seen more dovish than market pricing.</div></div>
+        <div class="drow"><span class="arr chg up">▲ Credit overall</span><div>Less cautious: fundamentals resilient, defaults contained — though valuations still unappealing.</div></div>
+        <div class="drow"><span class="arr chg same">— Unchanged</span><div>OW equities; EM over DM (Korea, Taiwan, China tech); Japan conviction OW; UW Europe; favour Gilts; gold as diversifier.</div></div>
+        <div class="drow"><span class="arr chg up">▲ Narrative</span><div>Energy shock fading — attention moving from Iran back to <b>resilient earnings and growth</b>.</div></div>
+      </div>
     </div>
   </div>
 
   <div class="foot">
-    Sources: BlackRock Investment Institute weekly commentaries (Jan 5 – Jul 13, 2026); Invesco Solutions & Custom Strategies Tactical Asset Allocation (April & July 2026); Morgan Stanley IM "The BEAT" (2026 Outlook, Q2 May, Q3 July 2026). Summaries are interpretive condensations of the underlying documents for internal review — verify against originals before acting. OW/UW/N badges reflect each provider's stated positioning; ▲▼ marks changes vs the provider's previous edition.
+    Sources: BlackRock Investment Institute weekly commentaries (Jan 5 – Jul 13, 2026); Invesco Solutions & Custom Strategies Tactical Asset Allocation (April & July 2026); Morgan Stanley IM "The BEAT" (2026 Outlook, Q2 May, Q3 July 2026); Fidelity International Global Asset Allocation Insights (July 2026, views June 2026). Summaries are interpretive condensations of the underlying documents for internal review — verify against originals before acting. OW/UW/N badges reflect each provider's stated positioning; ▲▼ marks changes vs the provider's previous edition.
   </div>
 </div>
 <script>
