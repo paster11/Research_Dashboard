@@ -203,6 +203,46 @@
   <!-- ============ VIEW 2: CROSS-PROVIDER COMPARISON (PRIMARY) ============ -->
   <div class="view active">
 
+    <div class="conscard" style="background:linear-gradient(135deg,rgba(77,163,255,.12),var(--panel));border-color:rgba(77,163,255,.4)">
+      <h2 style="font-size:1rem;margin-bottom:4px;color:var(--accent)">★ Internal Company Call — consensus conclusion</h2>
+      <div style="font-size:.75rem;color:var(--muted);margin-bottom:12px">Method: each provider scored OW = 2 · Neutral = 1 · UW = 0 (not-expressed excluded), averaged per asset. Call thresholds: avg ≥ 1.5 → <b>Buy (×2)</b> · 0.75–1.49 → <b>Accumulate (×1)</b> · &lt; 0.75 → <b>Hold / no position (×0)</b>. The multiplier scales position vs. benchmark performance.</div>
+      <div style="display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));font-size:.84rem">
+        <div>
+          <span class="badge b-ow" style="font-size:.75rem">BUY · ×2</span>
+          <ul style="list-style:none;color:#cdd6e6;margin-top:8px">
+            <li style="padding:2px 0">Equities overall <span class="note" style="display:inline">1.75</span></li>
+            <li style="padding:2px 0">U.S. equities <span class="note" style="display:inline">1.50</span></li>
+            <li style="padding:2px 0">Securitized (MBS/ABS) <span class="note" style="display:inline">2.00†</span></li>
+            <li style="padding:2px 0">EM debt <span class="note" style="display:inline">1.50</span></li>
+            <li style="padding:2px 0">Infrastructure / real assets <span class="note" style="display:inline">1.67†</span></li>
+            <li style="padding:2px 0">Commodities (copper) <span class="note" style="display:inline">1.50†</span></li>
+            <li style="padding:2px 0">Gold <span class="note" style="display:inline">1.50†</span></li>
+          </ul>
+        </div>
+        <div>
+          <span class="badge b-neu" style="font-size:.75rem">ACCUMULATE · ×1</span>
+          <ul style="list-style:none;color:#cdd6e6;margin-top:8px">
+            <li style="padding:2px 0">Japan equities <span class="note" style="display:inline">1.25</span></li>
+            <li style="padding:2px 0">EM equities <span class="note" style="display:inline">1.25</span></li>
+            <li style="padding:2px 0">Duration overall <span class="note" style="display:inline">0.75 — most contested call</span></li>
+            <li style="padding:2px 0">Non-U.S. sovereigns <span class="note" style="display:inline">1.00 — selective (Gilts)</span></li>
+            <li style="padding:2px 0">Inflation-linked <span class="note" style="display:inline">1.00†</span></li>
+            <li style="padding:2px 0">High yield / loans <span class="note" style="display:inline">0.75 — quality only</span></li>
+            <li style="padding:2px 0">U.S. dollar <span class="note" style="display:inline">1.00 — providers split</span></li>
+          </ul>
+        </div>
+        <div>
+          <span class="badge b-na" style="font-size:.75rem">HOLD · ×0</span>
+          <ul style="list-style:none;color:#cdd6e6;margin-top:8px">
+            <li style="padding:2px 0">Europe equities <span class="note" style="display:inline">0.50</span></li>
+            <li style="padding:2px 0">Long U.S. Treasuries <span class="note" style="display:inline">0.33†</span></li>
+            <li style="padding:2px 0">IG credit <span class="note" style="display:inline">0.25</span></li>
+          </ul>
+          <div style="font-size:.7rem;color:var(--muted);margin-top:10px">† fewer than 4 providers express a view — lower conviction, treat with judgment. Mechanical aggregation of third-party research; not investment advice.</div>
+        </div>
+      </div>
+    </div>
+
     <div style="display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(380px,1fr));margin-bottom:4px">
       <div class="conscard agree">
         <h2 style="font-size:.95rem;margin-bottom:10px;color:var(--ow)">✓ Where all four agree</h2>
@@ -235,109 +275,128 @@
     <div class="card">
       <table>
         <thead><tr>
-          <th style="width:15%">Asset Class</th>
-          <th style="width:21%"><span class="dot" style="background:var(--br)"></span> BlackRock <span class="pill">Jul 13</span></th>
-          <th style="width:21%"><span class="dot" style="background:var(--iv)"></span> Invesco <span class="pill">Jul TAA</span></th>
-          <th style="width:21%"><span class="dot" style="background:var(--ms)"></span> Morgan Stanley <span class="pill">Q3</span></th>
-          <th style="width:22%"><span class="dot" style="background:var(--fd)"></span> Fidelity <span class="pill">Jul GAA</span></th>
+          <th style="width:13%">Asset Class</th>
+          <th style="width:11%">Internal Call</th>
+          <th style="width:19%"><span class="dot" style="background:var(--br)"></span> BlackRock <span class="pill">Jul 13</span></th>
+          <th style="width:19%"><span class="dot" style="background:var(--iv)"></span> Invesco <span class="pill">Jul TAA</span></th>
+          <th style="width:19%"><span class="dot" style="background:var(--ms)"></span> Morgan Stanley <span class="pill">Q3</span></th>
+          <th style="width:19%"><span class="dot" style="background:var(--fd)"></span> Fidelity <span class="pill">Jul GAA</span></th>
         </tr></thead>
         <tbody>
 
-          <tr class="grp"><td colspan="5">Equities</td></tr>
+          <tr class="grp"><td colspan="6">Equities</td></tr>
           <tr><td class="asset">Overall<span class="sublab">risk stance</span></td>
+            <td><span class="badge b-ow">BUY 2</span><span class="note">score 1.75</span></td>
             <td><span class="badge b-ow">OW</span><span class="note">Pro-risk; earnings outpacing higher rates</span></td>
             <td><span class="badge b-ow">OW</span><span class="note">vs fixed income — defensively expressed (quality, low vol)</span></td>
             <td><span class="badge b-neu">N</span><span class="note">Neutral risk level; active OWs underneath</span></td>
             <td><span class="badge b-ow">OW</span><span class="note">Fundamentals over geopolitics; equities over credit</span></td></tr>
           <tr><td class="asset">United States<span class="sublab">S&amp;P 500, SMID</span></td>
+            <td><span class="badge b-ow">BUY 2</span><span class="note">score 1.50</span></td>
             <td><span class="badge b-ow">OW</span><span class="note">AI bottlenecks: power, chips, data centers</span></td>
             <td><span class="badge b-neu">N</span><span class="chg dn">▼</span><span class="note">Trimming U.S. preference vs DM ex-US</span></td>
             <td><span class="badge b-ow">OW</span><span class="note">#1 view; + OW U.S. SMID &amp; "AI Winners"</span></td>
             <td><span class="badge b-neu">N</span><span class="note">Selective: targeted thematic over broad — valuations, concentration</span></td></tr>
           <tr><td class="asset">Europe<span class="sublab">incl. UK</span></td>
+            <td><span class="badge b-na">HOLD 0</span><span class="note">score 0.50</span></td>
             <td><span class="badge b-neu">N</span><span class="note">Favor financials, infrastructure, industrials</span></td>
             <td><span class="badge b-neu">N</span><span class="chg up">▲</span><span class="note">Improving within DM ex-US tilt</span></td>
             <td><span class="badge b-uw">UW</span><span class="chg dn">▼</span><span class="note">Keep Banks + Utilities/grid only</span></td>
             <td><span class="badge b-uw">UW</span><span class="note">Weak demand, soft earnings, energy costs; UK equities neutral-defensive</span></td></tr>
           <tr><td class="asset">Japan<span class="sublab">reflation, reforms</span></td>
+            <td><span class="badge b-neu">ACC 1</span><span class="note">score 1.25</span></td>
             <td><span class="badge b-neu">N</span><span class="chg dn">▼</span><span class="note">Prefer physical-AI exposures; equities over JGBs</span></td>
             <td><span class="badge b-neu">N</span><span class="chg up">▲</span><span class="note">Part of DM ex-US preference; OW JPY</span></td>
             <td><span class="badge b-neu">N</span><span class="note">AI capex + reforms; OW Japanese banks</span></td>
             <td><span class="badge b-ow">OW</span><span class="note">Conviction OW: reform, shareholder returns, reflation</span></td></tr>
           <tr><td class="asset">Emerging Markets<span class="sublab">Korea, Taiwan, China, India, LatAm</span></td>
+            <td><span class="badge b-neu">ACC 1</span><span class="note">score 1.25</span></td>
             <td><span class="badge b-neu">N</span><span class="chg dn">▼</span><span class="note">Cut from OW on dollar strength; like AI-infra plays, LatAm</span></td>
             <td><span class="badge b-neu">N</span><span class="chg up">▲</span><span class="note">Reduced DM-over-EM preference</span></td>
             <td><span class="badge b-neu">N</span><span class="note">Taiwan/Korea AI strength vs China/India softness</span></td>
             <td><span class="badge b-ow">OW</span><span class="note">EM over DM: Korea, Taiwan, China tech</span></td></tr>
 
-          <tr class="grp"><td colspan="5">Government Bonds / Duration</td></tr>
+          <tr class="grp"><td colspan="6">Government Bonds / Duration</td></tr>
           <tr><td class="asset">Overall duration<span class="sublab">rate sensitivity</span></td>
+            <td><span class="badge b-neu">ACC 1</span><span class="note">score 0.75 — contested</span></td>
             <td><span class="badge b-uw">UW</span><span class="note">UW long end; prefer front-end/belly U.S. &amp; euro</span></td>
             <td><span class="badge b-ow">OW</span><span class="note">Duration as slowdown hedge</span></td>
             <td><span class="badge b-uw">UW</span><span class="note">Slight; close to neutral after rally to ~4.40%</span></td>
             <td><span class="badge b-neu">N</span><span class="note">Balanced: moderating inflation vs firm growth</span></td></tr>
           <tr><td class="asset">Long U.S. Treasuries<span class="sublab">10yr+</span></td>
+            <td><span class="badge b-na">HOLD 0</span><span class="note">score 0.33†</span></td>
             <td><span class="badge b-uw">UW</span><span class="note">Term premium, inflation, debt loads</span></td>
             <td><span class="badge b-na">—</span><span class="note">Expressed via overall duration OW</span></td>
             <td><span class="badge b-uw">UW</span><span class="note">Curve-steepening bias</span></td>
             <td><span class="badge b-neu">N</span><span class="note">Cuts priced out; yield levels relatively attractive</span></td></tr>
           <tr><td class="asset">Non-U.S. sovereigns<span class="sublab">Bunds, Gilts, JGBs</span></td>
+            <td><span class="badge b-neu">ACC 1</span><span class="note">score 1.00 — selective</span></td>
             <td><span class="badge b-uw">UW JGBs</span><span class="note">OW euro short/medium; UK gilts neutral</span></td>
             <td><span class="badge b-neu">N</span><span class="note">DM ex-US govt near neutral (hedged)</span></td>
             <td><span class="badge b-neu">N</span><span class="note">OW euro peripherals, UW core</span></td>
             <td><span class="badge b-ow">OW Gilts</span><span class="note">BoE less hawkish than priced; JGBs neutral</span></td></tr>
           <tr><td class="asset">Inflation-linked<span class="sublab">TIPS / linkers</span></td>
+            <td><span class="badge b-neu">ACC 1</span><span class="note">score 1.00†</span></td>
             <td><span class="badge b-neu">N</span><span class="note">Inflation settles above pre-pandemic, not priced near term</span></td>
             <td><span class="badge b-uw">UW</span><span class="chg dn">▼</span><span class="note">Rotated into nominals as breakevens fall</span></td>
             <td><span class="badge b-ow">OW</span><span class="note">Scope for inflation expectations to rise further</span></td>
             <td><span class="badge b-na">—</span><span class="note">Not separately expressed</span></td></tr>
 
-          <tr class="grp"><td colspan="5">Credit</td></tr>
+          <tr class="grp"><td colspan="6">Credit</td></tr>
           <tr><td class="asset">Investment grade<span class="sublab">spreads near record tights</span></td>
+            <td><span class="badge b-na">HOLD 0</span><span class="note">score 0.25</span></td>
             <td><span class="badge b-neu">N</span><span class="note">Short-term N / long-term UW</span></td>
             <td><span class="badge b-uw">UW</span><span class="note">Spread compensation unattractive</span></td>
             <td><span class="badge b-uw">UW</span><span class="note">Poor risk asymmetry to spreads</span></td>
             <td><span class="badge b-uw">UW</span><span class="chg up">▲</span><span class="note">Less negative overall, but expected return still poor</span></td></tr>
           <tr><td class="asset">High yield / loans<span class="sublab">carry vs tight spreads</span></td>
+            <td><span class="badge b-neu">ACC 1</span><span class="note">score 0.75 — quality only</span></td>
             <td><span class="badge b-neu">N</span><span class="note">Higher-rated HY; downgraded strategically in May</span></td>
             <td><span class="badge b-uw">UW</span><span class="note">Quality credit over risky credit</span></td>
             <td><span class="badge b-neu">N</span><span class="note">HY over IG; OW bank loans (carry)</span></td>
             <td><span class="badge b-neu">N</span><span class="chg dn">▼</span><span class="note">Downgraded: income-only opportunity</span></td></tr>
           <tr><td class="asset">Securitized<span class="sublab">MBS / ABS</span></td>
+            <td><span class="badge b-ow">BUY 2</span><span class="note">score 2.00†</span></td>
             <td><span class="badge b-ow">OW</span><span class="note">Agency MBS: Treasury-like risk, better income</span></td>
             <td><span class="badge b-na">—</span><span class="note">Not separately expressed</span></td>
             <td><span class="badge b-ow">OW</span><span class="note">Highest-conviction fixed income OW</span></td>
             <td><span class="badge b-na">—</span><span class="note">Not separately expressed</span></td></tr>
           <tr><td class="asset">EM debt<span class="sublab">hard vs local currency</span></td>
+            <td><span class="badge b-ow">BUY 2</span><span class="note">score 1.50</span></td>
             <td><span class="badge b-ow">OW</span><span class="chg up">▲</span><span class="note">Local currency: yield vs vol, improving fundamentals</span></td>
             <td><span class="badge b-neu">N</span><span class="note">Expressed via OW high-yield EM FX</span></td>
             <td><span class="badge b-ow">OW</span><span class="note">Hard currency, preferred over corporates</span></td>
             <td><span class="badge b-neu">N</span><span class="note">Hard ccy neutral; prefer selected local markets</span></td></tr>
 
-          <tr class="grp"><td colspan="5">Currencies</td></tr>
+          <tr class="grp"><td colspan="6">Currencies</td></tr>
           <tr><td class="asset">U.S. dollar<span class="sublab">the head-to-head call</span></td>
+            <td><span class="badge b-neu">ACC 1</span><span class="note">score 1.00 — split</span></td>
             <td><span class="badge b-neu">N</span><span class="note">Constructive: safe-haven intact</span></td>
             <td><span class="badge b-uw">UW</span><span class="chg dn">▼</span><span class="note">Flipped from OW: carry convergence</span></td>
             <td><span class="badge b-neu">N</span><span class="note">Safe-haven bid to fade with volatility</span></td>
             <td><span class="badge b-ow">OW</span><span class="chg up">▲</span><span class="note">Moved OW: growth, yields, hawkish Fed</span></td></tr>
           <tr><td class="asset">Other FX<span class="sublab">EUR, JPY, GBP, EM FX</span></td>
+            <td><span class="badge b-na">—</span><span class="note">too heterogeneous to score</span></td>
             <td><span class="badge b-na">—</span><span class="note">Watching short-yen crowding / carry unwind risk</span></td>
             <td><span class="badge b-ow">OW</span><span class="note">EUR, JPY, CAD + high-yield EM FX (INR, IDR, TWD, THB)</span></td>
             <td><span class="badge b-na">—</span><span class="note">Not separately expressed</span></td>
             <td><span class="badge b-uw">UW GBP</span><span class="chg dn">▼</span><span class="note">Weak labour market, political uncertainty</span></td></tr>
 
-          <tr class="grp"><td colspan="5">Alternatives</td></tr>
+          <tr class="grp"><td colspan="6">Alternatives</td></tr>
           <tr><td class="asset">Commodities / energy<span class="sublab">oil, industrial metals, copper</span></td>
+            <td><span class="badge b-ow">BUY 2</span><span class="note">score 1.50†</span></td>
             <td><span class="badge b-na">—</span><span class="note">Energy security as a theme, not a direct call</span></td>
             <td><span class="badge b-na">—</span><span class="note">Risk positioned below average overall</span></td>
             <td><span class="badge b-neu">N</span><span class="note">Energy falls on MOU; industrial metals upside if growth accelerates</span></td>
             <td><span class="badge b-ow">OW</span><span class="note">Transition materials, esp. copper (electrification, AI demand)</span></td></tr>
           <tr><td class="asset">Gold<span class="sublab">diversifier role</span></td>
+            <td><span class="badge b-ow">BUY 2</span><span class="note">score 1.50†</span></td>
             <td><span class="badge b-na">—</span><span class="note">Prefers active/private-market diversifiers</span></td>
             <td><span class="badge b-na">—</span><span class="note">Not expressed</span></td>
             <td><span class="badge b-neu">N</span><span class="note">Precious metals face headwind from higher real yields</span></td>
             <td><span class="badge b-ow">OW</span><span class="note">Strategic diversifier; near-term momentum balanced</span></td></tr>
           <tr><td class="asset">Infrastructure / real assets<span class="sublab">REITs, infra, private markets</span></td>
+            <td><span class="badge b-ow">BUY 2</span><span class="note">score 1.67†</span></td>
             <td><span class="badge b-ow">OW</span><span class="note">Under-owned; multi-mega-force demand, discount valuations</span></td>
             <td><span class="badge b-na">—</span><span class="note">Not expressed in TAA framework</span></td>
             <td><span class="badge b-neu">N</span><span class="note">Private markets neutral</span></td>
