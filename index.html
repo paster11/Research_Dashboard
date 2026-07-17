@@ -6,10 +6,10 @@
 <title>Research Intelligence Dashboard — July 2026</title>
 <style>
   :root{
-    --bg:#f4f6fa; --panel:#ffffff; --panel2:#eef1f7; --border:#d9dfeb;
-    --text:#1c2434; --muted:#5a6580; --accent:#1f6fb2;
-    --ow:#1e8e5a; --uw:#c0392b; --neu:#a87b0f;
-    --br:#c77f1a; --iv:#1f6fb2; --ms:#6c4ba6; --fd:#2e7d32;
+    --bg:#0e1420; --panel:#161e2e; --panel2:#1c2638; --border:#2a3752;
+    --text:#e8edf6; --muted:#93a1b8; --accent:#4da3ff;
+    --ow:#2ecc8f; --uw:#ff6b6b; --neu:#f0b94b;
+    --br:#ffb547; --iv:#4da3ff; --ms:#b48cff; --fd:#3dbd85;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.5}
@@ -20,19 +20,19 @@
   .sub{color:var(--muted);font-size:.85rem}
   .tabs{display:flex;gap:8px;margin-bottom:24px;flex-wrap:wrap}
   .tab{padding:10px 20px;border-radius:10px;background:var(--panel);border:1px solid var(--border);color:var(--muted);cursor:pointer;font-size:.9rem;font-weight:600}
-  .tab.active{background:var(--accent);color:#ffffff;border-color:var(--accent)}
+  .tab.active{background:var(--accent);color:#08111f;border-color:var(--accent)}
   .view{display:none}
   .view.active{display:block}
   .grid{display:grid;gap:16px}
   .g3{grid-template-columns:repeat(auto-fit,minmax(360px,1fr))}
-  .card{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:20px;box-shadow:0 1px 3px rgba(20,30,60,.06)}
+  .card{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:20px;}
   .card h2{font-size:1.05rem;margin-bottom:4px;display:flex;align-items:center;gap:8px}
   .dot{width:10px;height:10px;border-radius:50%;display:inline-block}
   .meta{color:var(--muted);font-size:.75rem;margin-bottom:14px}
   .sec{margin-bottom:14px}
   .sec h3{font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:6px;padding-bottom:4px;border-bottom:1px solid var(--border)}
   .sec ul{list-style:none}
-  .sec li{font-size:.84rem;padding:4px 0 4px 14px;position:relative;color:#3a4358}
+  .sec li{font-size:.84rem;padding:4px 0 4px 14px;position:relative;color:#cdd6e6}
   .sec li::before{content:"";position:absolute;left:0;top:11px;width:6px;height:6px;border-radius:50%;background:var(--accent)}
   .card.br .sec li::before{background:var(--br)} .card.iv .sec li::before{background:var(--iv)} .card.ms .sec li::before{background:var(--ms)} .card.fd .sec li::before{background:var(--fd)}
   .badge{font-size:.68rem;font-weight:700;padding:2px 9px;border-radius:20px;white-space:nowrap}
@@ -59,7 +59,7 @@
   .grp td{background:var(--panel2)!important;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:var(--accent);padding:8px 10px;border-bottom:1px solid var(--border)}
   .sublab{display:block;font-size:.68rem;color:var(--muted);font-weight:400;margin-top:2px}
   .b-na{background:var(--panel2);color:var(--muted);border:1px solid var(--border)}
-  .conscard{border:1px solid var(--border);border-radius:14px;padding:20px;margin-bottom:16px;background:var(--panel);box-shadow:0 1px 3px rgba(20,30,60,.06)}
+  .conscard{border:1px solid var(--border);border-radius:14px;padding:20px;margin-bottom:16px;background:var(--panel);}
   .conscard.agree{background:linear-gradient(135deg,rgba(46,204,143,.10),var(--panel));border-color:rgba(46,204,143,.35)}
   .conscard.div{background:linear-gradient(135deg,rgba(255,107,107,.08),var(--panel));border-color:rgba(255,107,107,.3)}
   .legend{display:flex;gap:14px;flex-wrap:wrap;margin:10px 0 18px;font-size:.75rem;color:var(--muted)}
@@ -203,50 +203,50 @@
   <!-- ============ VIEW 2: CROSS-PROVIDER COMPARISON (PRIMARY) ============ -->
   <div class="view active">
 
-    <div class="conscard" style="background:linear-gradient(135deg,rgba(31,111,178,.08),var(--panel));border-color:rgba(31,111,178,.35)">
+    <div class="conscard" style="background:linear-gradient(135deg,rgba(77,163,255,.12),var(--panel));border-color:rgba(77,163,255,.4)">
       <h2 style="font-size:1rem;margin-bottom:4px;color:var(--accent)">★ Internal Company Call — consensus conclusion</h2>
       <div style="font-size:.75rem;color:var(--muted);margin-bottom:12px">Method: each provider scored OW = 2 · Neutral = 1 · UW = 0 (not-expressed excluded), averaged per asset. Calls: avg ≥ 1.5 → <b>Buy (×2)</b> · 0.75–1.49 → <b>Accumulate (×1)</b> · &lt; 0.75 → <b>Hold / no position (×0)</b>. Overlay rules: <b>Reduce/Avoid (×0)</b> when avg ≤ 0.5 AND ≥2 providers are actively UW — bearish consensus, not absence of view · <b>coverage cap †</b>: Buy requires ≥3 providers expressing a view, otherwise capped at Accumulate · <b>borderline ‡</b>: score sits on a threshold — confirm over two consecutive updates before repositioning. The multiplier scales position vs. benchmark performance.</div>
       <div style="display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));font-size:.84rem">
         <div>
           <span class="badge b-ow" style="font-size:.75rem">BUY · ×2</span>
           <div style="font-size:.66rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:10px 0 2px">Equities</div>
-          <ul style="list-style:none;color:#3a4358">
+          <ul style="list-style:none;color:#cdd6e6">
             <li style="padding:2px 0">Equities overall <span class="note" style="display:inline">1.75</span></li>
             <li style="padding:2px 0">United States <span class="note" style="display:inline">1.50 ‡</span></li>
           </ul>
           <div style="font-size:.66rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:8px 0 2px">Credit</div>
-          <ul style="list-style:none;color:#3a4358">
+          <ul style="list-style:none;color:#cdd6e6">
             <li style="padding:2px 0">EM debt <span class="note" style="display:inline">1.50 ‡</span></li>
           </ul>
           <div style="font-size:.66rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:8px 0 2px">Alternatives</div>
-          <ul style="list-style:none;color:#3a4358">
+          <ul style="list-style:none;color:#cdd6e6">
             <li style="padding:2px 0">Infrastructure / real assets <span class="note" style="display:inline">1.67 — 3 providers</span></li>
           </ul>
         </div>
         <div>
           <span class="badge b-neu" style="font-size:.75rem">ACCUMULATE · ×1</span>
           <div style="font-size:.66rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:10px 0 2px">Equities</div>
-          <ul style="list-style:none;color:#3a4358">
+          <ul style="list-style:none;color:#cdd6e6">
             <li style="padding:2px 0">Japan <span class="note" style="display:inline">1.25</span></li>
             <li style="padding:2px 0">Emerging Markets <span class="note" style="display:inline">1.25</span></li>
           </ul>
           <div style="font-size:.66rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:8px 0 2px">Government Bonds / Duration</div>
-          <ul style="list-style:none;color:#3a4358">
+          <ul style="list-style:none;color:#cdd6e6">
             <li style="padding:2px 0">Duration overall <span class="note" style="display:inline">0.75 ‡ — most contested call</span></li>
             <li style="padding:2px 0">Non-U.S. sovereigns <span class="note" style="display:inline">1.00 — selective (Gilts)</span></li>
             <li style="padding:2px 0">Inflation-linked <span class="note" style="display:inline">1.00†</span></li>
           </ul>
           <div style="font-size:.66rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:8px 0 2px">Credit</div>
-          <ul style="list-style:none;color:#3a4358">
+          <ul style="list-style:none;color:#cdd6e6">
             <li style="padding:2px 0">High yield / loans <span class="note" style="display:inline">0.75 ‡ — quality only</span></li>
             <li style="padding:2px 0">Securitized (MBS/ABS) <span class="note" style="display:inline">2.00† — capped: only 2 providers</span></li>
           </ul>
           <div style="font-size:.66rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:8px 0 2px">Currencies</div>
-          <ul style="list-style:none;color:#3a4358">
+          <ul style="list-style:none;color:#cdd6e6">
             <li style="padding:2px 0">U.S. dollar <span class="note" style="display:inline">1.00 — providers split</span></li>
           </ul>
           <div style="font-size:.66rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:8px 0 2px">Alternatives</div>
-          <ul style="list-style:none;color:#3a4358">
+          <ul style="list-style:none;color:#cdd6e6">
             <li style="padding:2px 0">Commodities (copper) <span class="note" style="display:inline">1.50† — capped: only 2 providers</span></li>
             <li style="padding:2px 0">Gold <span class="note" style="display:inline">1.50† — capped: only 2 providers</span></li>
           </ul>
@@ -255,19 +255,19 @@
           <span class="badge b-uw" style="font-size:.75rem">REDUCE / AVOID · ×0</span>
           <div style="font-size:.7rem;color:var(--muted);margin:6px 0 2px">Active bearish consensus (≥2 UW), not absence of view</div>
           <div style="font-size:.66rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:8px 0 2px">Equities</div>
-          <ul style="list-style:none;color:#3a4358">
+          <ul style="list-style:none;color:#cdd6e6">
             <li style="padding:2px 0">Europe <span class="note" style="display:inline">0.50 — 2 UW</span></li>
           </ul>
           <div style="font-size:.66rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:8px 0 2px">Government Bonds / Duration</div>
-          <ul style="list-style:none;color:#3a4358">
+          <ul style="list-style:none;color:#cdd6e6">
             <li style="padding:2px 0">Long U.S. Treasuries <span class="note" style="display:inline">0.33 — 2 UW</span></li>
           </ul>
           <div style="font-size:.66rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:8px 0 2px">Credit</div>
-          <ul style="list-style:none;color:#3a4358">
+          <ul style="list-style:none;color:#cdd6e6">
             <li style="padding:2px 0">Investment grade <span class="note" style="display:inline">0.25 — 3 UW</span></li>
           </ul>
           <div style="font-size:.66rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:12px 0 2px">Hold · ×0</div>
-          <div style="font-size:.75rem;color:#3a4358">None this month — every zero-position call carries active bearish consensus.</div>
+          <div style="font-size:.75rem;color:#cdd6e6">None this month — every zero-position call carries active bearish consensus.</div>
           <div style="font-size:.7rem;color:var(--muted);margin-top:12px">† &lt;3 providers express a view — Buy capped at Accumulate. ‡ score on a threshold — confirm two consecutive updates before repositioning. Mechanical aggregation of third-party research; not investment advice.</div>
         </div>
       </div>
@@ -420,7 +420,7 @@
       <div style="display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));font-size:.84rem">
         <div>
           <h3 style="font-size:.72rem;text-transform:uppercase;color:var(--ow);margin-bottom:6px">Where all four agree</h3>
-          <ul style="list-style:none;color:#3a4358">
+          <ul style="list-style:none;color:#cdd6e6">
             <li style="padding:3px 0">• Cautious on IG credit at record-tight spreads — income via selective/securitized credit, not broad indices.</li>
             <li style="padding:3px 0">• AI-driven earnings are the core return engine; AI infrastructure/bottleneck themes (power, grid, chips) favoured across the board.</li>
             <li style="padding:3px 0">• Nobody is overweight Europe equities — MS and Fidelity UW, BlackRock and Invesco neutral.</li>
@@ -429,7 +429,7 @@
         </div>
         <div>
           <h3 style="font-size:.72rem;text-transform:uppercase;color:var(--uw);margin-bottom:6px">Where they diverge</h3>
-          <ul style="list-style:none;color:#3a4358">
+          <ul style="list-style:none;color:#cdd6e6">
             <li style="padding:3px 0">• <b>Duration:</b> Invesco OW (slowdown hedge) vs BlackRock &amp; MS UW (rates reset) vs Fidelity balanced.</li>
             <li style="padding:3px 0">• <b>U.S. dollar:</b> Fidelity moved OW the same month Invesco flipped UW — direct head-to-head.</li>
             <li style="padding:3px 0">• <b>Regional leadership:</b> Fidelity's EM-over-DM (Korea/Taiwan/China tech) vs BlackRock/MS U.S.-first.</li>
